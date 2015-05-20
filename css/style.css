@@ -1,0 +1,160 @@
+/* css is all rule based, we target an element, and then apply styles to it using 'properties' and 'values' */
+
+@import url(http://fonts.googleapis.com/css?family=Georgia:400);
+
+body {
+	/*declare the font on the outermost content element so that it cascades down to the child elements.*/
+
+	/*when declaring a 'font-stack', you need to provide a fallback font (e.g. sans-serif), that can be used when the primary one can't be found. otherwise, the browser will choose the deault, times new roman.*/
+	font-family: Georgia, Times;
+
+	/*16px is the default size a browser gives the type and the recommended size*/
+	font-size: 16px;
+
+	/*we set the line heigth as a decimal value. the line height in this case would be equivalent to 25px (or 16x1.5)*/
+	line-height: 1.5;
+
+	/*this sets the color of the text. it can be done with a keyword, an rgba value or a hex value.*/
+	color: #000;
+
+	/*set a background fallback colour in case someon's on a really slow browser and can't load the image.*/
+	background: #999;
+
+	/*we use the '../' to come out of the css folder, then go into the images folder with the images/.*/
+	background-image: url(../images/knitting.png);
+
+	/*we use this to center the image on the body element on both the x and y axis*/
+	background-position: center;
+
+	/*this is to make sure that css doesn't do the tiling thing.*/
+	
+
+	/*this means that the background appears to stay in place and the text is scrolling only. it attaches it to the viewport in a fixed position.*/
+	background-attachment: fixed;
+
+	/*part of css3, the latest version and allows us to size backgrounds where you couldn't before*/
+
+	max-width: 800px;
+
+	/*we speciied the margin using the shorthand, which goes clockwise, the 'auto' keyword automatically centers the body.*/
+	margin: 0 auto 0 auto;
+
+}
+
+header{
+
+	/*center the logo*/
+	text-align: center;
+
+	/*provide some 'padding'. this pushes the edge of the box out more.*/
+	padding: 20px 0 20px 0;
+
+}
+
+nav{
+
+	/*apply background colour (#fee34c)*/
+	background: #161E2B;
+
+	/*align the text in the centre*/
+	text-align: center;
+
+	/*apply some padding (20px top and bottom)*/
+	padding: 20px 0px;
+	/*to make padding easier if the top and bottom are the same and the sides are the same
+	you can just add two code parts intead of four, e.g. instead of 20px 0 20px 0 you can write 20px 0.*/
+}
+
+/*this will only select anchors that are inside nav elements*/
+nav a{
+
+	/*removes the underline*/
+	text-decoration: none;
+
+	padding: 20px;
+
+	/*we can be explicit about our font weight and target it specifically*/
+	font-weight: 400;
+
+	/*get rid of the nasty default colour*/
+	color: #fff;
+	/*you can shorten it when all the 6 characters are the same*/
+}
+
+/*this is called a pseudo state, and we can hook into the hover action on an element.*/
+nav a:hover {
+
+	color: #dfdfdf;
+
+}
+
+section {
+
+	background-color: #efefef;
+
+	padding: 20px 40px;
+
+	/*we specify 3 properties:thickness, type and colour. getting the order of these doesn't really matter, which can give us some flexibility.*/
+	border-bottom: solid 1px #eee;
+
+}
+
+h1 {text-align: center;
+
+	padding: 20px 40px
+
+}
+
+h2 {
+
+	color: #268e97;
+
+	font-size: 21px;
+
+	margin: 20px 0;
+}
+
+h3 {
+
+	color: #268e97
+}
+
+p {
+	margin: 20px 0;
+}
+
+footer{
+	text-align: center;
+	padding: 40px 0;
+}
+
+	/*anchor tags are inline elements by default, we need to force them to stack on top of each other using this display property*/
+	nav a {
+		
+		padding: 10px ;
+	}
+
+/*we can target multiple elements in one selector, using a comma after every one, except for the last one.*/
+img,
+iframe{
+	max-width: 100%;
+}
+
+.image {width: 	100%}
+
+
+/*this is a media query block, it applies styles to our page when the width is below 720px*/
+@media screen and (max-width: 720px) {
+
+	nav a{
+		display: block;
+
+	}
+
+	section {
+		padding: 20px 4%;
+
+	}
+
+
+}
